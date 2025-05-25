@@ -1,6 +1,6 @@
-# 🎬 Japanese Subtitle Translator (AV-aware GPT Subtitle Translation)
+# 🎬 AI-Powered Subtitle Translator (AV-Aware, Multi-Language Support)
 
-This project uses OpenAI/Gemini models to batch translate Japanese `.srt` subtitle files into natural and fluent Simplified Chinese or English subtitles. It **automatically detects AV (adult video) style subtitles** and dynamically switches to the appropriate translation style.
+This project uses OpenAI/Gemini models to batch translate subtitle files from any language into natural and fluent Simplified Chinese or English subtitles. It **automatically detects AV (adult video) style subtitles** and dynamically switches to the appropriate translation style.
 
 ---
 

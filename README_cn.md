@@ -1,17 +1,21 @@
-# 🎬 Japanese Subtitle Translator (AV-aware GPT Subtitle Translation)
+# 🎬 AI 驱动的字幕翻译器（AV 风格识别，多语言支持）
 
-本项目使用 OpenAI/Gemini 模型，将日文 `.srt` 字幕文件批量翻译为自然流畅的简体中文字幕，**自动识别 AV（成人影片）风格字幕**，并动态切换适当的翻译风格。
+本项目使用 OpenAI/Gemini 模型，将任意语言的字幕文件批量翻译为自然流畅的简体中文或英文字幕，**自动识别 AV（成人影片）风格字幕**，并动态切换适当的翻译风格。
+
+---
+
+**English users, please refer to the [English version](README.md)**
 
 ---
 
 ## ✨ 特性功能
 
 - ✅ **自动识别 AV 风格字幕**
-- 🎭 普通对白使用专业书面翻译，AV对白使用真实、情绪化、口语化的翻译
-- 💬 支持 GPT 4、Gemini、Cloudflare AI Gateway 等接口
+- 🎭 普通对白使用专业书面翻译，AV 对白使用真实、情绪化、口语化的翻译
+- 💬 支持 GPT-4、Gemini、Cloudflare AI Gateway 等接口
 - 🔁 支持中断恢复、翻译进度保存
 - 🧠 去重处理，仅对唯一句子进行翻译，节省 API 调用
-- 🧼 自动将翻译结果合并回 `.srt` 字幕中，支持中文输出
+- 🧼 自动将翻译结果合并回 `.srt` 字幕中，支持中文或英文输出
 
 ---
 
@@ -21,7 +25,7 @@
 
 ```bash
 pip install openai tqdm python-dotenv srt
-````
+```
 
 ---
 
@@ -46,7 +50,8 @@ python translate_srt.py -i input.srt
 ### 可选参数：
 
 ```bash
--o, --output   指定输出文件路径（默认自动命名为 input.zh.srt）
+-o, --output   指定输出文件路径（默认自动命名为 input.zh.srt 或 input.en.srt，取决于语言）
+-l, --language 指定目标语言（默认：zh 表示简体中文，en 表示英文）
 ```
 
 运行后脚本将：
@@ -54,7 +59,7 @@ python translate_srt.py -i input.srt
 1. 提取字幕中唯一的句子
 2. 自动判断是否为 AV 风格内容
 3. 使用对应翻译 prompt 调用 GPT 模型翻译
-4. 生成中文字幕并保存为 `.zh.srt`
+4. 生成翻译字幕并保存为 `.zh.srt` 或 `.en.srt`
 
 ---
 
